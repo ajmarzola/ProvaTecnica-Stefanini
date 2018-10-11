@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,8 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProvaTecnica.Entity\ProvaTecnica.Entity.csproj">
+      <Project>{1942e0a1-1031-4099-96a0-07cd0b5199d9}</Project>
+      <Name>ProvaTecnica.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProvaTecnica.IO\ProvaTecnica.IO.csproj">
+      <Project>{bdb1f802-637b-4b54-bfcb-62bcde579619}</Project>
+      <Name>ProvaTecnica.IO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

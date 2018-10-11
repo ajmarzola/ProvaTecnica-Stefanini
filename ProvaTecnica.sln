@@ -23,7 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Outros", "Outros", "{02C70D
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\Desktop\ProvaTecnicaSr.pdf = ..\..\..\Desktop\ProvaTecnicaSr.pdf
 		Teste1.txt = Teste1.txt
+		Teste2.txt = Teste2.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvaTecnica.IO", "ProvaTecnica.IO\ProvaTecnica.IO.csproj", "{BDB1F802-637B-4B54-BFCB-62BCDE579619}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +62,10 @@ Global
 		{3191CF25-651A-4C67-98AE-5D2976D7585F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3191CF25-651A-4C67-98AE-5D2976D7585F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3191CF25-651A-4C67-98AE-5D2976D7585F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDB1F802-637B-4B54-BFCB-62BCDE579619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDB1F802-637B-4B54-BFCB-62BCDE579619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDB1F802-637B-4B54-BFCB-62BCDE579619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDB1F802-637B-4B54-BFCB-62BCDE579619}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +75,7 @@ Global
 		{8DA0A74D-B093-495A-9952-52CB308369AE} = {785B86CB-B6A5-4D08-A4B7-11F6B1222E76}
 		{E73056AD-E6CA-40ED-ABAA-F7F8CE67F6F2} = {785B86CB-B6A5-4D08-A4B7-11F6B1222E76}
 		{3191CF25-651A-4C67-98AE-5D2976D7585F} = {785B86CB-B6A5-4D08-A4B7-11F6B1222E76}
+		{BDB1F802-637B-4B54-BFCB-62BCDE579619} = {785B86CB-B6A5-4D08-A4B7-11F6B1222E76}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {78F408DA-2832-45CB-8475-25163932D571}

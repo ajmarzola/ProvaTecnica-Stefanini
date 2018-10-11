@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProvaTecnica.Entity.ViewModels
+namespace ProvaTecnica.IO
 {
-    class OrderItemViewModel
+    public class File
     {
     }
 }

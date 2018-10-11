@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProvaTecnica.Data
 {
-    public class Class1
+    public class DalBase
     {
+
     }
 }
