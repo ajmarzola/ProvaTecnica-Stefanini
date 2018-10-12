@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace ProvaTecnica.Entity
 {
     public class Customer
     {
-        [Key, Required(ErrorMessage = "Necessário Informar o Código"), ForeignKey("Customer")]
+        [Key, Required(ErrorMessage = "Necessário Informar o Código")]
         public int Id { get; set; }
 
         [MaxLength(15), Required(ErrorMessage = "Necessário Informar o Primeiro Nome")]
@@ -24,6 +23,8 @@ namespace ProvaTecnica.Entity
         public string Email { get; set; }
 
         public bool IsActive { get; set; }
+
+        public ICollection<Product> Products { get; set; }
 
         public static IList<Customer> Convert(string pContent)
         {
