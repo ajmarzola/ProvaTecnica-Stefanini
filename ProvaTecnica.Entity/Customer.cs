@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 
 namespace ProvaTecnica.Entity
@@ -19,6 +20,8 @@ namespace ProvaTecnica.Entity
         [Required(ErrorMessage = "Necessário Informar a Data de Nascimento")]
         public DateTime BirthDate { get; set; }
 
+        public string Gender { get; set; }
+
         [RegularExpression(@"b[A-Z0-9._%-]+@[A-Z0-9.-]+.[A-Z]{2,4}b", ErrorMessage = "E-mail em formato inválido.")]
         public string Email { get; set; }
 
@@ -26,24 +29,18 @@ namespace ProvaTecnica.Entity
 
         public ICollection<Product> Products { get; set; }
 
-        public static IList<Customer> Convert(string pContent)
+        public static Customer Convert(string pContent)
         {
-            var ret = new List<Customer>();
-            var lines = pContent.Split(';').ToList<string>();
-
-            foreach (var line in lines)
-            {
-                var register = line.Split(',');
-                var customer = new Customer();
-                customer.Id = int.Parse(register[0]);
-                customer.FirstName = register[1];
-                customer.LastName = register[2];
-                customer.BirthDate = DateTime.Parse(register[3]);
-                customer.IsActive = bool.Parse(register[4]);
-                ret.Add(customer);
-            }
-
-            return ret;
+            var register = pContent.Split(',');
+            var customer = new Customer();
+            customer.Id = int.Parse(register[0]);
+            customer.FirstName = register[1];
+            customer.LastName = register[2];
+            customer.BirthDate = DateTime.ParseExact(register[3], "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            customer.Gender = register[4];
+            customer.Email = register[5];
+            customer.IsActive = bool.Parse(register[6]);
+            return customer;
         }
     }
 }

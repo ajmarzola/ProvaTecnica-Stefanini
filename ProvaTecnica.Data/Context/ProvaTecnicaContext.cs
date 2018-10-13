@@ -5,7 +5,7 @@ namespace ProvaTecnica.Data.Context
 {
     class ProvaTecnicaContext : DbContext
     {
-        public ProvaTecnicaContext() : base("ProvaTecnica")
+        public ProvaTecnicaContext() : base("name=ProvaTecnicaConnectionString")
         {
             //
         }
@@ -20,6 +20,11 @@ namespace ProvaTecnica.Data.Context
                 .HasRequired<Customer>(c => c.Customer)
                 .WithMany(p => p.Products)
                 .HasForeignKey<int>(p => p.CustomerId);
+        }
+
+        private void FixEfProviderServicesProblem()
+        {
+            var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
     }
 }

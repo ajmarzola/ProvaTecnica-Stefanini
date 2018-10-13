@@ -16,22 +16,14 @@ namespace ProvaTecnica.Entity
 
         public Customer Customer { get; set; }
 
-        public static IList<Product> Convert(string pContent)
+        public static Product Convert(string pContent)
         {
-            var ret = new List<Product>();
-            var lines = pContent.Split(';').ToList<string>();
-
-            foreach (var line in lines)
-            {
-                var register = line.Split(',');
-                var product = new Product();
-                product.Id = int.Parse(register[0]);
-                product.Customer.Id = int.Parse(register[1]);
-                product.Name = register[2];
-                ret.Add(product);
-            }
-
-            return ret;
+            var register = pContent.Split(',');
+            var product = new Product();
+            product.Id = int.Parse(register[0]);
+            product.Customer.Id = int.Parse(register[1]);
+            product.Name = register[2];
+            return product;
         }
     }
 }
